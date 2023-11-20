@@ -1,0 +1,31 @@
+<!-- controls.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.io Video Controls</title>
+</head>
+<body>
+  <button onclick="playVideo()">Play</button>
+  <button onclick="pauseVideo()">Pause</button>
+  <button onclick="skip10Seconds()">Skip 10 Seconds</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    function playVideo() {
+      socket.emit('play');
+    }
+
+    function pauseVideo() {
+      socket.emit('pause');
+    }
+
+    function skip10Seconds() {
+      socket.emit('skip10');
+    }
+  </script>
+</body>
+</html>
